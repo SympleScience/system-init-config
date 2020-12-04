@@ -1,3 +1,114 @@
+$essentials = @(
+## Programming/development:
+'vscode',
+'git.portable',
+'github-desktop',
+'microsoft-windows-terminal',
+'r',
+'r.studio',
+'anaconda3',
+'julia',
+
+##Utilities:
+'firefox',
+'googlechrome',
+'putty.portable',
+'vim'
+)
+
+$other = @(
+## Programming/development:
+'wsl2',
+'docker-desktop',
+'autohotkey.portable',
+#Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/frycast/system-init/master/common/.gitconfig' -OutFile (Join-Path $env:USERPROFILE '.gitconfig'),
+'git-lfs',
+'golang',
+
+### Databases:
+# 'mongodb.portable', # many other mongodb extensions: https://chocolatey.org/packages?q=mongodb
+# 'sqlite',
+# 'sqlite.analyzer'; 'sqlite-studio.portable'; 'sqlitebrowser.portable',
+# 'postgresql'; 'pgadmin4'; 'postgis-9.3',
+
+### Other:
+# 'msvisualcplusplus2013-redist', # May need to move?
+# 'qgis',
+
+##Utilities:
+# 'ungoogled-chromium',
+# 'tor-browser',
+# 'directoryopus',
+
+##Comms:
+'discord',
+'signal'
+# 'slack',
+# 'zoom',
+
+#Non-essentials:
+## Utilities:
+# 'notion',
+# 'everything',
+# 'wiztree',
+# 'adobereader',
+# 'sharex',
+# 'joplin',
+# 'zim' # Personal desktop wiki,
+# '7zip',
+# 'patch-my-pc',
+# 'irfanview',
+# 'irfanviewplugins',
+# 'notepadplusplus',
+# 'displayfusion',
+# 'zotero',
+# 'bitwarden',
+# 'wox',
+# 'megasync',
+# 'thunderbird',
+# 'youtube-dl',
+# 'ffmpeg',
+# 'teracopy',
+# 'veracrypt',
+# 'foxitreader',
+# 'qbittorrent',
+# 'freefilesync',
+# 'dupeguru',
+# 'hwinfo.portable',
+# 'gpu-z',
+# 'cpu-z.portable',
+# 'speccy',
+# 'plasso'  # Process lasso,
+# 'hydrus-network',
+# 'jdownloader',
+# 'audacity',
+# 'handbrake.portable',
+# 'rclone',
+# 'rclonebrowser',
+# 'powertoys',
+# 'jabref',
+
+## Learning:
+# 'geogebra',
+
+## Media:
+# 'musicbee',
+# 'potplayer',
+# 'vlc',
+
+## Entertainment:
+# 'calibre',
+
+## Games:
+# 'nmm', # Nexus mod manager
+# 'playnite',
+# 'steam',
+
+### Utilities:
+# 'nvidia-profile-inspector',
+# 'msiafterburner',
+)
+
 function Install-Chocolatey {
     Set-ExecutionPolicy Bypass -Scope Process -Force;
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
@@ -15,119 +126,11 @@ function Install-FromChocolatey {
 }
 
 Install-Chocolatey
-
+$essentials | ForEach-Object { Install-FromChocolatey $_ }
+$other | ForEach-Object { Install-FromChocolatey $_ }
 # Guide: for add more packages use: https://chocolatey.org/
 
-#Essentials:
-
-## Programming/development:
-Install-FromChocolatey 'vscode'
-#Install-FromChocolatey 'wsl2'
-# Install-FromChocolatey 'docker-desktop'
-Install-FromChocolatey 'git.portable'
-Install-FromChocolatey 'github-desktop'
-#Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/frycast/system-init/master/common/.gitconfig' -OutFile (Join-Path $env:USERPROFILE '.gitconfig')
-# Install-FromChocolatey 'git-lfs'
-Install-FromChocolatey 'microsoft-windows-terminal'
-Install-FromChocolatey 'r'
-Install-FromChocolatey 'r.studio'
-Install-FromChocolatey 'anaconda3'
-Install-FromChocolatey 'julia'
-# Install-FromChocolatey 'golang'
-
-### Databases:
-# Install-FromChocolatey 'mongodb.portable' # many other mongodb extensions: https://chocolatey.org/packages?q=mongodb
-# Install-FromChocolatey 'sqlite'
-# Install-FromChocolatey 'sqlite.analyzer'; Install-FromChocolatey 'sqlite-studio.portable'; Install-FromChocolatey 'sqlitebrowser.portable'
-# Install-FromChocolatey 'postgresql'; Install-FromChocolatey 'pgadmin4'; Install-FromChocolatey 'postgis-9.3'
-# 
-
-### Other:
-# Install-FromChocolatey 'msvisualcplusplus2013-redist' # May need to move?
-# Install-FromChocolatey 'qgis'
-
-
-##Utilities:
-Install-FromChocolatey 'firefox'
-Install-FromChocolatey 'googlechrome'
-# Install-FromChocolatey 'ungoogled-chromium'
-# Install-FromChocolatey 'tor-browser'
-Install-FromChocolatey 'putty.portable'
-# Install-FromChocolatey 'directoryopus'
-
-
-##Comms:
-Install-FromChocolatey 'discord'
-Install-FromChocolatey 'signal'
-# Install-FromChocolatey 'slack'
-# Install-FromChocolatey 'zoom'
-# Install-FromChocolatey 'powertoys'
-# Install-FromChocolatey 'jabref'
-
-
-#Non-essentials:
-## Utilities:
-# Install-FromChocolatey 'notion'
-# Install-FromChocolatey 'everything'
-# Install-FromChocolatey 'wiztree'
-# Install-FromChocolatey 'adobereader'
-# Install-FromChocolatey 'sharex'
-# Install-FromChocolatey 'joplin'
-# Install-FromChocolatey 'zim' # Personal desktop wiki
-# Install-FromChocolatey '7zip'
-# Install-FromChocolatey 'patch-my-pc'
-# Install-FromChocolatey 'irfanview'
-# Install-FromChocolatey 'irfanviewplugins'
-# Install-FromChocolatey 'autohotkey.portable'
-# Install-FromChocolatey 'notepadplusplus'
-# Install-FromChocolatey 'displayfusion'
-# Install-FromChocolatey 'zotero'
-# Install-FromChocolatey 'bitwarden'
-# Install-FromChocolatey 'wox'
-# Install-FromChocolatey 'megasync'
-# Install-FromChocolatey 'thunderbird'
-# Install-FromChocolatey 'youtube-dl'
-# Install-FromChocolatey 'ffmpeg'
-# Install-FromChocolatey 'teracopy'
-# Install-FromChocolatey 'veracrypt'
-# Install-FromChocolatey 'foxitreader'
-# Install-FromChocolatey 'qbittorrent'
-# Install-FromChocolatey 'freefilesync'
-# Install-FromChocolatey 'dupeguru'
-# Install-FromChocolatey 'hwinfo.portable'
-# Install-FromChocolatey 'gpu-z'
-# Install-FromChocolatey 'cpu-z.portable'
-# Install-FromChocolatey 'speccy'
-# Install-FromChocolatey 'plasso'  # Process lasso
-# Install-FromChocolatey 'hydrus-network'
-# Install-FromChocolatey 'jdownloader'
-# Install-FromChocolatey 'audacity'
-# Install-FromChocolatey 'handbrake.portable'
-# Install-FromChocolatey 'rclone'
-# Install-FromChocolatey 'rclonebrowser'
-
-# Learning:
-# Install-FromChocolatey 'geogebra'
-
-## Media:
-# Install-FromChocolatey 'musicbee'
-# Install-FromChocolatey 'potplayer'
-# Install-FromChocolatey 'vlc'
-
-## Entertainment:
-# Install-FromChocolatey 'calibre'
-
-## Games:
-# Install-FromChocolatey 'nmm' # Nexus mod manager
-# Install-FromChocolatey 'playnite'
-# Install-FromChocolatey 'steam'
-
-### Utilities:
-# Install-FromChocolatey 'nvidia-profile-inspector'
-# Install-FromChocolatey 'msiafterburner'
-
-
-# Non-Chocolatey:
+# Non-Chocolatey apps:
 # Ubuntu - Install from windows store
 # Draw io desktop - install from online
 # Git Bash
