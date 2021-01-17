@@ -24,6 +24,9 @@ $other = @(
 #Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/frycast/system-init/master/common/.gitconfig' -OutFile (Join-Path $env:USERPROFILE '.gitconfig'),
 'git-lfs',
 'golang',
+'mingw',
+'javaruntime',
+'openjdk'
 
 ### Databases:
 # 'mongodb.portable', # many other mongodb extensions: https://chocolatey.org/packages?q=mongodb
