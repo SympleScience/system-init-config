@@ -28,7 +28,7 @@ $other = @(
 'javaruntime',
 'openjdk',
 'openjdk11',
-'sbt'
+'sbt',
 
 ### Databases:
 # 'mongodb.portable', # many other mongodb extensions: https://chocolatey.org/packages?q=mongodb
@@ -122,7 +122,7 @@ $other = @(
 function Install-Chocolatey {
     Set-ExecutionPolicy Bypass -Scope Process -Force;
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
-    iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    iex ((New-Object System.Net.WebClient).DownloadString('https://github.com/SympleScience/system-init-config/blob/main/chocolatey_install_script.ps1'))
 }
 
 function Install-FromChocolatey {
@@ -145,5 +145,6 @@ $other | ForEach-Object { Install-FromChocolatey $_ }
 # Draw io desktop - install from online
 # Git Bash
 # Riva Tuner Statistics
+# reWASD
 
 

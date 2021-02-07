@@ -1,1 +1,0 @@
-iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/frycast/system-init/master/windows/chocolatey_install_script.ps1'))
