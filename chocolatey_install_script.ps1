@@ -26,7 +26,9 @@ $other = @(
 'golang',
 'mingw',
 'javaruntime',
-'openjdk'
+'openjdk',
+'openjdk11',
+'sbt'
 
 ### Databases:
 # 'mongodb.portable', # many other mongodb extensions: https://chocolatey.org/packages?q=mongodb
@@ -36,7 +38,11 @@ $other = @(
 
 ### Other:
 # 'msvisualcplusplus2013-redist', # May need to move?
+
+## GIS:
 # 'qgis',
+# 'lastools',
+# 'inkscape'
 
 ##Utilities:
 # 'ungoogled-chromium',
@@ -51,6 +57,7 @@ $other = @(
 
 #Non-essentials:
 ## Utilities:
+# 'evernote',
 # 'notion',
 # 'everything',
 # 'wiztree',
