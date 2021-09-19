@@ -13,6 +13,7 @@ $essentials = @(
 'firefox',
 'googlechrome',
 'putty.portable',
+'winscp',
 'vim'
 )
 
@@ -31,6 +32,8 @@ $other = @(
 'sbt',
 
 ### Databases:
+# 'sql-server-management-studio',
+# 'azure-data-studio',
 # 'mongodb.portable', # many other mongodb extensions: https://chocolatey.org/packages?q=mongodb
 # 'sqlite',
 # 'sqlite.analyzer'; 'sqlite-studio.portable'; 'sqlitebrowser.portable',
@@ -57,6 +60,7 @@ $other = @(
 
 #Non-essentials:
 ## Utilities:
+# 'powertoys',
 # 'evernote',
 # 'notion',
 # 'everything',
